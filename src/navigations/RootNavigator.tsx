@@ -7,6 +7,7 @@ import { StatusBar, AsyncStorage } from "react-native";
 import { AuthenticationProvider, LikedPropertiesProvider } from "../context";
 import { User } from "../models";
 import { LoadingLayout, LoadingManager } from "../presentation";
+import LandingPage from "../screens/landing";
 import AuthNavigator from "./AuthNavigator";
 import HomePageTabNavigator from "./HomePageTabNavigator";
 import NavigationNames from "./NavigationNames";
@@ -54,8 +55,8 @@ export default function () {
               mode="modal"
             >
               <RootStack.Screen
-                name={NavigationNames.RootScreen}
-                component={HomePageTabNavigator}
+                name={NavigationNames.LandingScreen}
+                component={LandingPage}
               />
               <RootStack.Screen
                 name={NavigationNames.RootLoginScreen}

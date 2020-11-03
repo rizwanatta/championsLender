@@ -34,8 +34,8 @@ export const LikedPropertiesProvider: React.FC<object> = (props) => {
         .catch((err) => {
           if (err.response && err.response.status === 401) {
             authContext.logout();
-          }else {
-            Alert.alert(err.message)
+          } else {
+            Alert.alert(err.message);
           }
         });
     } else {

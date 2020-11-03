@@ -100,9 +100,10 @@ export const HomeHeaderView: React.FC<TProps> = ({
         >
           <Image
             source={require("../../../assets/logo.png")}
-            resizeMode="contain"
+            resizeMode="center"
             style={{
               width: 200,
+              height: 150,
             }}
           />
         </View>

@@ -19,7 +19,7 @@ export const LANGUAGES: LanguageModel[] = [
   },
   {
     lang: "tr",
-    isRTL: false, 
+    isRTL: false,
   },
   {
     lang: "ar",

@@ -1,5 +1,6 @@
 export default {
   RootScreen: "RootScreen",
+  LandingScreen: "LandingScreen",
   HomeScreen: "HomeScreen",
   SearchScreen: "SearchScreen",
   ProfileScreen: "ProfileScreen",
