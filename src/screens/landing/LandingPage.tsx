@@ -1,11 +1,10 @@
-import { Octicons } from "@expo/vector-icons";
 import React from "react";
 import {
   ImageBackground,
   Image,
   View,
-  FlatList,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 
 import { Text } from "../../components/text";
@@ -18,11 +17,26 @@ interface Props {
 
 const LandingPage = (props: Props) => {
   const iconsData = [
-    { title: "House Match", icon: "home" },
-    { title: "Credit Road Map", icon: "milestone" },
-    { title: "Piggy Bank", icon: "gist-secret" },
-    { title: "Ask an Expert", icon: "person" },
-    { title: "Design Game", icon: "play" },
+    {
+      title: "House Match",
+      image: require("../../../assets/landing_screen_assets/house-match.png"),
+    },
+    {
+      title: "Credit Road Map",
+      image: require("../../../assets/landing_screen_assets/credit-road-map.png"),
+    },
+    {
+      title: "Piggy Bank",
+      image: require("../../../assets/landing_screen_assets/piggy-bank.png"),
+    },
+    {
+      title: "Ask an Expert",
+      image: require("../../../assets/landing_screen_assets/ask-an-expert.png"),
+    },
+    {
+      title: "Design Game",
+      image: require("../../../assets/landing_screen_assets/design-game.png"),
+    },
   ];
 
   const onMenuPressed = (item) => {
@@ -32,7 +46,7 @@ const LandingPage = (props: Props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
         <ImageBackground
           style={styles.headerBgImage}
@@ -62,21 +76,30 @@ const LandingPage = (props: Props) => {
         </View>
       </View>
 
-      <FlatList
-        data={iconsData}
-        numColumns={3}
-        renderItem={({ item }) => (
+      <View>
+        <View style={styles.imageHorizontalContainer}>
           <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => onMenuPressed(item)}
-            style={styles.menuIconContainer}
+            onPress={() => {
+              onMenuPressed(iconsData[0]);
+            }}
           >
-            <Octicons name={item.icon} color="white" size={50} />
-            <Text style={styles.menuIconLabel}>{item.title}</Text>
+            <Image source={iconsData[0].image} style={styles.menuIconImage} />
           </TouchableOpacity>
-        )}
-      />
-    </View>
+
+          <Image source={iconsData[1].image} style={styles.menuIconImage} />
+        </View>
+
+        <Image
+          source={iconsData[2].image}
+          style={[styles.menuIconImage, { alignSelf: "center" }]}
+        />
+
+        <View style={styles.imageHorizontalContainer}>
+          <Image source={iconsData[3].image} style={styles.menuIconImage} />
+          <Image source={iconsData[4].image} style={styles.menuIconImage} />
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 

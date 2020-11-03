@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   },
   header: {
     width: "100%",
-    height: "40%",
+    height: "30%",
   },
   headerBgImage: {
     width: "100%",
@@ -52,15 +52,26 @@ const styles = StyleSheet.create({
   },
 
   menuIconContainer: {
-    backgroundColor: secondaryColor,
+    // backgroundColor: secondaryColor,
     height: 100,
     width: 120,
-    borderColor: "rgba(14, 96, 80, 1)",
-    margin: 5,
-    borderWidth: 2,
+    // borderColor: "rgba(14, 96, 80, 1)",
+    margin: 20,
+    // borderWidth: 2,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
+  },
+  menuIconImage: {
+    height: 100,
+    width: 120,
+    margin: 10,
+    marginHorizontal: 30,
+    resizeMode: "contain",
+  },
+  imageHorizontalContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
   },
   menuIconLabel: {
     color: "white",
